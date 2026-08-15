@@ -28,7 +28,7 @@
 [![Unity Version](https://img.shields.io/badge/Unity-2021.3LTS-black?style=flat-square&logo=unity)](https://unity.com/)
 [![Status](https://img.shields.io/badge/Paused-orange.svg?style=flat-square)]()
 
-<img src="[Link_to_your_gameplay.gif]" width="700" alt="Gameplay Showcase">
+<img src="./project_examples/paper_tanks_mobile/gifs/paper_tanks_mobile_showcase.gif" width="700" alt="Gameplay Showcase">
 
 *Short gameplay showcase*
 
@@ -57,12 +57,9 @@ At the moment, the project has reached the prototype stage and currently paused.
 * **Sound system:** A simple but functional system for sound and music, controlled from the game menu.
 * **Units & Grid:** The game field is represented as a mathematical grid that supports various types of units and objects, as well as a unit and object spawning system based on the Prototype pattern.
 
-## Code examples
+## Code examples links
 
-[Turn-base system](./project_examples/paper_tanks_mobile/code/turn_system.cs)
-
-[Enemies algorithms](./project_examples/paper_tanks_mobile/code/enemies.cs)
-
-[Grid](./project_examples/paper_tanks_mobile/code/grid.cs)
-
-[Units](./project_examples/paper_tanks_mobile/code/units.cs)
+* [Turn-base system](./project_examples/paper_tanks_mobile/code/turn_system.cs)
+* [Enemies algorithms](./project_examples/paper_tanks_mobile/code/enemies.cs)
+* [Grid](./project_examples/paper_tanks_mobile/code/grid.cs)
+* [Units](./project_examples/paper_tanks_mobile/code/units.cs)
