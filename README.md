@@ -63,3 +63,56 @@ At the moment, the project has reached the prototype stage and currently paused.
 * [Enemies algorithms](./project_examples/paper_tanks_mobile/code/enemies.cs)
 * [Grid](./project_examples/paper_tanks_mobile/code/grid.cs)
 * [Units](./project_examples/paper_tanks_mobile/code/units.cs)
+
+<!--
+## Try it!
+
+[📥 Download build (Windows) - alpha 2.0](./project_examples/paper_tanks_mobile/builds/PaperTanksMobile_Build.zip?raw=true)
+-->
+
+# 🎮 Mission In Space
+**A 3D replayable first‑person shooter game**
+
+[![Unity Version](https://img.shields.io/badge/Unity-2023.2-black?style=flat-square&logo=unity)](https://unity.com/)
+[![Status](https://img.shields.io/badge/Paused-orange.svg?style=flat-square)]()
+
+<img src="./project_examples/mission_in_space/gifs/mission_in_space_showcase.gif" width="700" alt="Gameplay Showcase">
+
+*Short gameplay showcase*
+
+</div>
+
+---
+
+## 📖 About The Project
+
+A study project within the framework of the second‑semester curriculum at SAE Institute. The key points and objectives of the project were to create an architecturally stable game and to implement a multithreaded system, as well as design patterns and Shader Graph. 
+
+The project’s architecture was designed in accordance with the MVC and SOLID patterns, and multithreading was used to speed up the generation and placement of levels and objects. The StateMachine pattern, in the portable version, manages the basic AI of enemies, and the game itself is playable and replayable.
+
+## 🛠 Tech Stack & Tools
+
+* **Engine:** Unity 2023.2.20f1
+* **Language:** C#
+* **Architecture & Optimisation:** MVC, SOLID, Component-Based Design, Multithreading
+* **Dependency Injection:** simple scene/project-context injecting, using [Zenject by modesttree](https://github.com/modesttree/zenject)
+* **Other Plugins/Tools:** DOTween, NaughtyAttributes, Shader Graph, Portable StateMachine
+
+## 🏗 Architecture & Engineering Highlights
+
+* **Procedurale Generation:** Seamless procedural generation of the entire level, enemies, and quest items, optimized using multithreaded Jobs and employing mathematical calculations to determine the position of rooms.
+* **Simple AI:** The universal and extended State Machine pattern, wrapped in a portable tool, allowed for quick and precise configuration of the enemy’s basic intelligence.
+* **Shading:** Manually created simple shaders in Shader Graph to create the illusion of a beautiful environment and visual effects for items and weapons.
+* **Event-Driven Communication:** Replaced tight coupling with an Event Bus / ScriptableObject-based event system to handle UI and gameplay communication.
+
+## Code examples links
+
+* [State Machine](./project_examples/mission_in_space/code/state_machine.cs)
+* [Multithreading](./project_examples/mission_in_space/code/multithreadin.cs)
+* 
+<!--
+## Try it!
+
+[📥 Download build (Windows)](./project_examples/mission_in_space/builds/MissionInSpace_Build.zip?raw=true)
+ -->
+
