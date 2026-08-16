@@ -76,7 +76,7 @@ At the moment, the project has reached the prototype stage and currently paused.
 **A 3D replayable first‑person shooter game**
 
 [![Unity Version](https://img.shields.io/badge/Unity-2023.2-black?style=flat-square&logo=unity)](https://unity.com/)
-[![Status](https://img.shields.io/badge/Paused-orange.svg?style=flat-square)]()
+[![Status](https://img.shields.io/badge/Finished-green.svg?style=flat-square)]()
 
 <img src="./project_examples/mission_in_space/gifs/mission_in_space_showcase.gif" width="700" alt="Gameplay Showcase">
 
@@ -110,8 +110,8 @@ The project’s architecture was designed in accordance with the MVC and SOLID p
 ## Code examples links
 
 * [State Machine](./project_examples/mission_in_space/code/state_machine.cs)
-* [Multithreading](./project_examples/mission_in_space/code/multithreadin.cs)
-* 
+* [Multithreading](./project_examples/mission_in_space/code/multithreading.cs)
+
 <!--
 ## Try it!
 
