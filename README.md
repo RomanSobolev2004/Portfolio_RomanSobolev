@@ -70,6 +70,8 @@ At the moment, the project has reached the prototype stage and currently paused.
 [📥 Download build (Windows) - alpha 2.0](./project_examples/paper_tanks_mobile/builds/PaperTanksMobile_Build.zip?raw=true)
 -->
 
+<div align="center">
+
 # 🎮 Mission In Space
 **A 3D replayable first‑person shooter game**
 
