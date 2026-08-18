@@ -195,7 +195,8 @@ The project’s architecture was designed in accordance with the MVC and SOLID p
 
 ## Code examples links
 
-[Object Wrapping tool, used for custom DI](./project_examples/tale_of_lost_one/code/wrapper.cs)
+* [Object Wrapping tool, used for custom DI](./project_examples/tale_of_lost_one/code/wrapper.cs)
+
 Example
 ```csharp
 //Simple usage
@@ -228,7 +229,8 @@ protected virtual void Construct(IZenjectWrapped zenject)
     IPlayer parameter = zenject.Unwrapp<IPlayer>();
 }
 ```
-[Save System](./project_examples/tale_of_lost_one/code/saves.cs)
+* [Save System](./project_examples/tale_of_lost_one/code/saves.cs)
+
 Example
 ```csharp
 public ClassExample: ISaveable
@@ -267,7 +269,8 @@ public ClassExample: ISaveable
         save_string = objData.save_string;
     }
 ```
-[Enemy system](./project_examples/tale_of_lost_one/code/enemies.cs)
+* [Enemy system](./project_examples/tale_of_lost_one/code/enemies.cs)
+
 Creating new Enemy exapmle
 ```csharp
     public class NewEnemy_Bootstrapper: EnemyBootstrapper<NewEnemy_SpawnConitions_>
@@ -298,8 +301,8 @@ Creating new Enemy exapmle
     }
 ```
 
-[Event based interacting system](./project_examples/tale_of_lost_one/code/interacting.cs)
-[Microphone- input from ingame enviroment noise](./project_examples/tale_of_lost_one/code/noise.cs)
+* [Event based interacting system](./project_examples/tale_of_lost_one/code/interacting.cs)
+* [Microphone- input from ingame enviroment noise](./project_examples/tale_of_lost_one/code/noise.cs)
 
 
 ## Try it!
