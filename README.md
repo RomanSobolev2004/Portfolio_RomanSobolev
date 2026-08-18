@@ -26,6 +26,7 @@
 **A mobile 2D turn‑based strategy game about tanks in a hand‑drawn style.**
 
 [![Unity Version](https://img.shields.io/badge/Unity-2021.3LTS-black?style=flat-square&logo=unity)](https://unity.com/)
+[![Type](https://img.shields.io/badge/Personal/Study-grey.svg?style=flat-square)]()
 [![Status](https://img.shields.io/badge/Paused-orange.svg?style=flat-square)]()
 
 <img src="./project_examples/paper_tanks_mobile/gifs/paper_tanks_mobile_showcase.gif" width="700" alt="Gameplay Showcase">
@@ -64,19 +65,19 @@ At the moment, the project has reached the prototype stage and currently paused.
 * [Grid](./project_examples/paper_tanks_mobile/code/grid.cs)
 * [Units](./project_examples/paper_tanks_mobile/code/units.cs)
 
-<!--
 ## Try it!
 
 [📥 Download build (Windows) - alpha 2.0](./project_examples/paper_tanks_mobile/builds/PaperTanksMobile_Build.zip?raw=true)
--->
+
 
 <div align="center">
 
-# 🎮 Mission In Space
+ # 🎮 Mission In Space
 **A 3D replayable first‑person shooter game**
 
 [![Unity Version](https://img.shields.io/badge/Unity-2023.2-black?style=flat-square&logo=unity)](https://unity.com/)
-[![Status](https://img.shields.io/badge/Finished-green.svg?style=flat-square)]()
+[![Type](https://img.shields.io/badge/Study-grey.svg?style=flat-square)]()
+[![Status](https://img.shields.io/badge/Paused-orange.svg?style=flat-square)]()
 
 <img src="./project_examples/mission_in_space/gifs/mission_in_space_showcase.gif" width="700" alt="Gameplay Showcase">
 
@@ -96,7 +97,7 @@ The project’s architecture was designed in accordance with the MVC and SOLID p
 
 * **Engine:** Unity 2023.2.20f1
 * **Language:** C#
-* **Architecture & Optimisation:** MVC, SOLID, Component-Based Design, Multithreading
+* **Architecture & Optimozation** MVC, SOLID, Component-Based Design, Multithreading
 * **Dependency Injection:** simple scene/project-context injecting, using [Zenject by modesttree](https://github.com/modesttree/zenject)
 * **Other Plugins/Tools:** DOTween, NaughtyAttributes, Shader Graph, Portable StateMachine
 
@@ -112,9 +113,39 @@ The project’s architecture was designed in accordance with the MVC and SOLID p
 * [State Machine](./project_examples/mission_in_space/code/state_machine.cs)
 * [Multithreading](./project_examples/mission_in_space/code/multithreading.cs)
 
-<!--
 ## Try it!
 
-[📥 Download build (Windows)](./project_examples/mission_in_space/builds/MissionInSpace_Build.zip?raw=true)
- -->
+[📥 Download build from GoogleDrive(Windows)](https://drive.google.com/file/d/16HdtxUpuX4q5OWaSrVdtYnmQ_kyLM7uA/view?usp=sharing)
 
+
+# 🎮 Ages of Tower Defence
+**A Mobile 3D game in genre TowerDefence with a low poly graphics**
+
+[![Unity Version](https://img.shields.io/badge/Unity-2021.3-black?style=flat-square&logo=unity)](https://unity.com/)
+[![Type](https://img.shields.io/badge/Personal-grey.svg?style=flat-square)]()
+[![Status](https://img.shields.io/badge/Finished-green.svg?style=flat-square)]()
+
+<img src="./project_examples/ages_of_tower_defence/gifs/ages_of_tower_defence_showcase.gif" width="700" alt="Gameplay Showcase">
+
+*Short gameplay showcase*
+
+</div>
+
+---
+
+## 📖 About The Project
+
+My first project, brought to a certain point. The project was entirely my work, from the models to the code, which at that time had no distinctive features, since I was just starting to take development seriously at that point.
+
+Nevertheless, the project includes 2 fully functional game levels, with some support for graphics settings music and sounds.
+
+## 🛠 Tech Stack & Tools
+
+* **Engine:** Unity 2021.3.2f1
+* **Language:** C#
+* **Architecture:** Component-Based Design, SPAGETTI
+
+## Try it!
+
+[📥 Download build (Windows)](./project_examples/ages_of_tower_defence/builds/AgesOfTowerDefence_Build.rar?raw=true)
+<!-- [📥 Download app (Android)](./project_examples/ages_of_tower_defence/builds/AgesOfTowerDefence_App.apk?raw=true) -->
