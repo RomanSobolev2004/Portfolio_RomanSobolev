@@ -29,7 +29,7 @@
 [![Type](https://img.shields.io/badge/Personal/Study-grey.svg?style=flat-square)]()
 [![Status](https://img.shields.io/badge/Paused-orange.svg?style=flat-square)]()
 
-<img src="./project_examples/paper_tanks_mobile/gifs/paper_tanks_mobile_showcase.gif" width="700" alt="Gameplay Showcase">
+<img src="./project_examples/paper_tanks_mobile/assets/paper_tanks_mobile_showcase.gif" width="700" alt="Gameplay Showcase">
 
 *Short gameplay showcase*
 
@@ -77,9 +77,9 @@ At the moment, the project has reached the prototype stage and currently paused.
 
 [![Unity Version](https://img.shields.io/badge/Unity-2023.2-black?style=flat-square&logo=unity)](https://unity.com/)
 [![Type](https://img.shields.io/badge/Study-grey.svg?style=flat-square)]()
-[![Status](https://img.shields.io/badge/Paused-orange.svg?style=flat-square)]()
+[![Status](https://img.shields.io/badge/Finished-green.svg?style=flat-square)]()
 
-<img src="./project_examples/mission_in_space/gifs/mission_in_space_showcase.gif" width="700" alt="Gameplay Showcase">
+<img src="./project_examples/mission_in_space/assets/mission_in_space_showcase.gif" width="700" alt="Gameplay Showcase">
 
 *Short gameplay showcase*
 
@@ -99,7 +99,7 @@ The project’s architecture was designed in accordance with the MVC and SOLID p
 * **Language:** C#
 * **Architecture & Optimozation** MVC, SOLID, Component-Based Design, Multithreading
 * **Dependency Injection:** simple scene/project-context injecting, using [Zenject by modesttree](https://github.com/modesttree/zenject)
-* **Other Plugins/Tools:** DOTween, NaughtyAttributes, Shader Graph, Portable StateMachine
+* **Other Plugins/Tools:** DOTween, NaughtyAttributes, UniRX, Shader Graph, Portable StateMachine
 
 ## 🏗 Architecture & Engineering Highlights
 
@@ -125,7 +125,7 @@ The project’s architecture was designed in accordance with the MVC and SOLID p
 
 [![Unity Version](https://img.shields.io/badge/Unity-2021.3-black?style=flat-square&logo=unity)](https://unity.com/)
 [![Type](https://img.shields.io/badge/Personal-grey.svg?style=flat-square)]()
-[![Status](https://img.shields.io/badge/Finished-green.svg?style=flat-square)]()
+[![Status](https://img.shields.io/badge/Paused-orange.svg?style=flat-square)]()
 
 <img src="./project_examples/ages_of_tower_defence/gifs/ages_of_tower_defence_showcase.gif" width="700" alt="Gameplay Showcase">
 
@@ -152,3 +152,156 @@ Nevertheless, the project includes 2 fully functional game levels, with some sup
 [📥 Download build (Windows)](https://github.com/RomanSobolev2004/Portfolio_RomanSobolev/raw/refs/heads/main/project_examples/ages_of_tower_defence/builds/AgesOfTowerDefence_Build.rar)
 <!-- [📥 Download app (Android)](./project_examples/ages_of_tower_defence/builds/AgesOfTowerDefence_App.apk?raw=true) -->
 
+
+<div align="center">
+
+ # 🎮 The tale of the Lost one
+**A 3D horror quest game**
+
+[![Unity Version](https://img.shields.io/badge/Unity-6000.0LTS-black?style=flat-square&logo=unity)](https://unity.com/)
+[![Type](https://img.shields.io/badge/Study-grey.svg?style=flat-square)]()
+[![Status](https://img.shields.io/badge/Finished-green.svg?style=flat-square)]()
+
+<img src="./project_examples/tale_of_lost_one/assets/tale_of_lost_one_showcase.gif" width="700" alt="Gameplay Showcase">
+
+*Short gameplay showcase*
+
+</div>
+
+---
+
+## 📖 About The Project
+
+A study project within the framework of the second‑semester curriculum at SAE Institute. The key points and objectives of the project were to create an architecturally stable game and to implement a multithreaded system, as well as design patterns and Shader Graph. 
+
+The project’s architecture was designed in accordance with the MVC and SOLID patterns, and multithreading was used to speed up the generation and placement of levels and objects. The StateMachine pattern, in the portable version, manages the basic AI of enemies, and the game itself is playable and replayable.
+
+## 🛠 Tech Stack & Tools
+
+* **Engine:** Unity 6000.0.59f2 LTS
+* **Language:** C#
+* **Architecture & Optimozation** MVC, SOLID, Component-Based Design
+* **Dependency Injection:** Custom injection system, using [Zenject by modesttree](https://github.com/modesttree/zenject)
+* **Other Plugins/Tools:** DOTween, NaughtyAttributes, UniRX, EasySave, Shader Graph
+
+## 🏗 Architecture & Engineering Highlights
+
+* **Custom injection system:** A specially created custom tool to bind and inject components at the required points in the code, without the need for hard‑coded arguments.
+* **Custom save system:** The own save system for saving and loading key scene data, using the EasySave plugin
+* **Event-Driven Communication:** Replaced tight coupling with an Event Bus / ScriptableObject-based event system to handle UI and gameplay communication.
+* **Shading:** Manually created simple shaders in Shader Graph to create the illusion of a skybox and outdoors enviroment.
+* **Visual atmosphere:** Custom assets for creating locations, and visual effects based on packages such as Linework (outline & filling) and VolumetricFog.
+* **Flexible Enemy system:** The enemy spawning and control system, based on StateMachine, which makes it easy to create different variations of enemies with different logic.
+
+## Code examples links
+
+[Object Wrapping tool, used for custom DI](./project_examples/tale_of_lost_one/code/wrapper.cs)
+Example
+```csharp
+//Simple usage
+private void Example()
+{
+    WrappedParameters parameters = new();
+    parameters.WrappObjects(123, "Example", true);
+    Debug.Log(parameters.Unwrapp<int>()); //returns 123 as int
+    Debug.Log(parameters.Unwrapp<string>()); //returns "Example" as string
+
+    parameters.WrappNew(321);
+    Debug.Log(parameters.Unwrapp<int>(0)); //returns 123
+    Debug.Log(parameters.Unwrapp<int>(1)); //returns 321
+
+    parameters.WrappNew(m_player.WrappTo<IPlayer>());
+    Debug.Log(parameters.Unwrapp<IPlayer>()); //returns m_player as IPlayer interface
+}
+
+//Binding Zenject
+[Inject] IZenjectWrapped wrapped;
+public override void InstallBindings()
+{
+    wrapped.Bind(player.Interface.WrappTo<IPlayer>());
+}
+
+//Injecting
+[Inject]
+protected virtual void Construct(IZenjectWrapped zenject)
+{
+    IPlayer parameter = zenject.Unwrapp<IPlayer>();
+}
+```
+[Save System](./project_examples/tale_of_lost_one/code/saves.cs)
+Example
+```csharp
+public ClassExample: ISaveable
+{
+    private bool saved = false;
+    private string save_string = string.Empty;
+
+    public ClassExample()
+    {
+        SaveLoadRegistry.Register(this);
+    }
+    private void OnDestroy()
+    {
+        SaveLoadRegistry.Unregister(this);
+    }
+    
+    public virtual ExpData PackData()
+    {
+        var data = new ThisObjecExpData();
+
+        WriteData(data);
+
+        return data;
+    }
+
+    protected virtual void WriteData(ThisObjecExpData data)
+    {
+       data.saved = saved;
+       data.save_string = save_string;
+    }
+    public virtual void LoadData(ExpData data)
+    {
+        var objData = data as ThisObjecExpData;
+
+        saved = objData.saved;
+        save_string = objData.save_string;
+    }
+```
+[Enemy system](./project_examples/tale_of_lost_one/code/enemies.cs)
+Creating new Enemy exapmle
+```csharp
+    public class NewEnemy_Bootstrapper: EnemyBootstrapper<NewEnemy_SpawnConitions_>
+    {
+        [SerializeField] private NavMeshAgent enemyNavMesh;
+
+        [Space,Header("States")]
+        [SerializeField] private ActiveState activeState;
+        [SerializeField] private WalkState walkState;
+
+        protected override void BindStates(IZenjectWrapped zenject)
+        {
+            base.BindStates(zenject);
+
+            spawnConditions.BindCondition(zenject, new(EnableSave.WrappTo("IsSave")));
+
+            activeState.BindState(zenject, new(enemyObject, enemyNavMesh, spawnConditions, EnableSave.WrappTo("IsSave")));
+            walkState.BindState(zenject, new(enemyObject, enemyNavMesh, spawnConditions, EnableSave.WrappTo("IsSave")));
+        }
+
+        protected override void BindEnemyStateMachine(IZenjectWrapped zenject)
+        {
+            base.BindEnemyStateMachine(zenject);
+
+            _enemyStateMachine.AddState(activeState, new StateTransition(walkState.GetType()));
+            _enemyStateMachine.AddState(walkState);
+        }
+    }
+```
+
+[Event based interacting system](./project_examples/tale_of_lost_one/code/interacting.cs)
+[Microphone- input from ingame enviroment noise](./project_examples/tale_of_lost_one/code/noise.cs)
+
+
+## Try it!
+
+[📥 Download build from GoogleDrive(Windows)]()
