@@ -67,7 +67,7 @@ At the moment, the project has reached the prototype stage and currently paused.
 
 ## Try it!
 
-[📥 Download build (Windows) - alpha 2.0](./project_examples/paper_tanks_mobile/builds/PaperTanksMobile_Build.zip?raw=true)
+[📥 Download build (Windows) - alpha 2.0](https://github.com/RomanSobolev2004/Portfolio_RomanSobolev/raw/refs/heads/main/project_examples/paper_tanks_mobile/builds/PaperTanksMobile_Build.zip)
 
 
 <div align="center">
@@ -118,6 +118,8 @@ The project’s architecture was designed in accordance with the MVC and SOLID p
 [📥 Download build from GoogleDrive(Windows)](https://drive.google.com/file/d/16HdtxUpuX4q5OWaSrVdtYnmQ_kyLM7uA/view?usp=sharing)
 
 
+<div align="center">
+
 # 🎮 Ages of Tower Defence
 **A Mobile 3D game in genre TowerDefence with a low poly graphics**
 
@@ -147,5 +149,6 @@ Nevertheless, the project includes 2 fully functional game levels, with some sup
 
 ## Try it!
 
-[📥 Download build (Windows)](./project_examples/ages_of_tower_defence/builds/AgesOfTowerDefence_Build.rar?raw=true)
+[📥 Download build (Windows)](https://github.com/RomanSobolev2004/Portfolio_RomanSobolev/raw/refs/heads/main/project_examples/ages_of_tower_defence/builds/AgesOfTowerDefence_Build.rar)
 <!-- [📥 Download app (Android)](./project_examples/ages_of_tower_defence/builds/AgesOfTowerDefence_App.apk?raw=true) -->
+
