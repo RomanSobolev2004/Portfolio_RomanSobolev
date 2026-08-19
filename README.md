@@ -159,8 +159,8 @@ Nevertheless, the project includes 2 fully functional game levels, with some sup
 **A 3D horror quest game**
 
 [![Unity Version](https://img.shields.io/badge/Unity-6000.0LTS-black?style=flat-square&logo=unity)](https://unity.com/)
-[![Type](https://img.shields.io/badge/Study-grey.svg?style=flat-square)]()
-[![Status](https://img.shields.io/badge/Finished-green.svg?style=flat-square)]()
+[![Type](https://img.shields.io/badge/Personal-grey.svg?style=flat-square)]()
+[![Status](https://img.shields.io/badge/In_Progress-blue.svg?style=flat-square)]()
 
 <img src="./project_examples/tale_of_lost_one/assets/tale_of_lost_one_showcase.gif" width="700" alt="Gameplay Showcase">
 
@@ -308,3 +308,101 @@ Creating new Enemy exapmle
 ## Try it!
 
 [📥 Download build from GoogleDrive(Windows)](https://drive.google.com/file/d/1g_kOk_9yeFowEd9IawqHt-pqrPXCRMnm/view?usp=sharing)
+
+
+<div align="center">
+
+ # 🛠 VN Creator
+**An in engine tool fore a create a Visual Novels**
+
+[![Unity Version](https://img.shields.io/badge/Unity-6000.2-black?style=flat-square&logo=unity)](https://unity.com/)
+[![Type](https://img.shields.io/badge/Personal-grey.svg?style=flat-square)]()
+[![Status](https://img.shields.io/badge/In_Progress-blue.svg?style=flat-square)]()
+
+<img src="./project_examples/vn_creator/assets/vn_creator_demo.gif" width="700" alt="Gameplay Showcase">
+
+*Short gameplay showcase*
+
+</div>
+
+---
+
+## 📖 About The Project
+
+This project is a tool for creating 2D visual novels, based on storing data in ScriptableObject and using the XNode plugin for convenient construction and customization of the required nodes, which can then be used in the engine.
+
+ At the moment, the asset project is still under development and does not have a stable working demo version due to a large number of unfinished features; however, significant functionality is already present in the prototype form and is functioning in a promising way.
+
+## 🛠 Tech Stack & Tools
+
+* **Engine:** Unity 6000.2.11f1
+* **Language:** C#
+* **Architecture** MVC, SOLID, Component-Based Design
+* **Dependency Injection:** simple scene/project-context injecting, using [Zenject by modesttree](https://github.com/modesttree/zenject)
+* **Other Plugins/Tools:** XNode, DOTween, NaughtyAttributes, UniRX
+
+## 🏗 Architecture & Engineering Highlights
+
+* **Nodes based timeline:** The game progress is carried out using customized nodes from the XNode plugin. Each node is responsible for a specific action on the stage, stores the necessary information, and can be connected to other nodes.
+* **Tiled game run processes:** This tool uses separate executor classes that independently perform the required action depending on which game flow node was passed and what data it has.
+* **Event-Driven Communication:** Replaced tight coupling with an Event Bus / ScriptableObject-based event system to handle UI and gameplay communication.
+
+## Code examples links
+
+* [Node example](./project_examples/vn_creator/code/node.cs)
+Dialog Node Example
+```csharp
+public class DialogNode : StoryActionNode
+{
+    [field: SerializeField] public bool ShowMenue { get; private set; } = true;
+    [field: SerializeField] public bool ShowBackgroundFill { get; private set; } = true;
+    [field: SerializeField] public CharacterKeySO WhoSays { get; private set; }
+    [field: SerializeField, TextArea(5, 20)] public string DialogLine { get; private set; }
+
+    public override StoryActionTypes NodeType => StoryActionTypes.Dialog;
+}
+```
+* [Game engine script](./project_examples/vn_creator/code/engine.cs)
+
+
+<div align="center">
+
+ # 🛠 Portable State Machine
+**An Unity Editor tool for an easy use of State Mchine**
+
+[![Unity Version](https://img.shields.io/badge/Unity-2023.2-black?style=flat-square&logo=unity)](https://unity.com/)
+[![Type](https://img.shields.io/badge/Personal-grey.svg?style=flat-square)]()
+[![Status](https://img.shields.io/badge/In_Progress-blue.svg?style=flat-square)]()
+
+<img src="./project_examples/portable_state_machine/assets/portable_fsm_demo.gif" width="700" alt="Gameplay Showcase">
+
+*Short gameplay showcase*
+
+</div>
+
+---
+
+## 📖 About The Project
+
+The project is a custom, manually created tool for wrapping Finite State Machine into a convenient and concise form in the form of a separate window, with custom nodes for each state and the ability to configure parameters and attach links to components/objects directly from the scene.
+
+The project is under active development with the aim of releasing it to the public so that everyone can easily integrate such a useful pattern into their projects.
+
+## 🛠 Tech Stack & Tools
+
+* **Engine:** Unity 2023.2.20f1
+* **Language:** C#
+* **Architecture** MVC, SOLID, Component-Based Design
+* **Other Plugins/Tools:** Unity Editor, NaughtyAttributes, UniRX
+
+## 🏗 Architecture & Engineering Highlights
+
+* **Custom editor graph window:** A graph written entirely by hand using the Unity Editor for configuring a state machine, which contains all the settings for a specific instance of the state machine and the current states in the form of nodes and the connections between them.
+* **Nodes-states:** Each state can be wrapped in a special node. Such state nodes can be used in the graph, and they support all data types, including references to objects from the scene itself.
+* **FSM:** The Finite State Machine design pattern is the core of the system, meaning it can be used both in a portable wrapper with a graph and without it.
+* **Event-Driven Communication:** Replaced tight coupling with an Event Bus / ScriptableObject-based event system to handle UI and gameplay communication.
+
+## Code examples links
+
+* [Editor graph](./project_examples/mission_in_space/code/graph.cs)
+* [Node expamle](./project_examples/mission_in_space/code/node.cs)
