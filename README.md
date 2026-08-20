@@ -350,6 +350,7 @@ This project is a tool for creating 2D visual novels, based on storing data in S
 ## Code examples links
 
 * [story graph node](./project_examples/vn_creator/code/node.cs)
+
 Dialog Node Example
 ```csharp
 public class DialogNode : StoryActionNode
@@ -406,6 +407,7 @@ The project is under active development with the aim of releasing it to the publ
 
 * [Editor graph](./project_examples/mission_in_space/code/graph.cs)
 * [Portable state](./project_examples/mission_in_space/code/node.cs)
+
 Node example
 ```csharp
  public class WalkState : PortableState
