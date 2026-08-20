@@ -127,7 +127,7 @@ The project’s architecture was designed in accordance with the MVC and SOLID p
 [![Type](https://img.shields.io/badge/Personal-grey.svg?style=flat-square)]()
 [![Status](https://img.shields.io/badge/Paused-orange.svg?style=flat-square)]()
 
-<img src="./project_examples/ages_of_tower_defence/gifs/ages_of_tower_defence_showcase.gif" width="700" alt="Gameplay Showcase">
+<img src="./project_examples/ages_of_tower_defence/assets/ages_of_tower_defence_showcase.gif" width="700" alt="Gameplay Showcase">
 
 *Short gameplay showcase*
 
@@ -321,7 +321,7 @@ Creating new Enemy exapmle
 
 <img src="./project_examples/vn_creator/assets/vn_creator_demo.gif" width="700" alt="Gameplay Showcase">
 
-*Short gameplay showcase*
+*Short tool usage demo*
 
 </div>
 
@@ -349,7 +349,7 @@ This project is a tool for creating 2D visual novels, based on storing data in S
 
 ## Code examples links
 
-* [Node example](./project_examples/vn_creator/code/node.cs)
+* [story graph node](./project_examples/vn_creator/code/node.cs)
 Dialog Node Example
 ```csharp
 public class DialogNode : StoryActionNode
@@ -376,7 +376,7 @@ public class DialogNode : StoryActionNode
 
 <img src="./project_examples/portable_state_machine/assets/portable_fsm_demo.gif" width="700" alt="Gameplay Showcase">
 
-*Short gameplay showcase*
+*Short tool usage demo*
 
 </div>
 
@@ -405,4 +405,27 @@ The project is under active development with the aim of releasing it to the publ
 ## Code examples links
 
 * [Editor graph](./project_examples/mission_in_space/code/graph.cs)
-* [Node expamle](./project_examples/mission_in_space/code/node.cs)
+* [Portable state](./project_examples/mission_in_space/code/node.cs)
+Node example
+```csharp
+ public class WalkState : PortableState
+    {
+        [SerializeField] private Transform walkSubject;
+        [SerializeField] private InterfaceReference<IEnemyNavMeshController> navMeshController;
+        [SerializeField] private WalkingController walkingController;
+
+        public override void Enter(params object[] args)
+        {
+            base.Enter(args);
+
+            walkingController.StartWalk(walkSubject, navMeshController.Interface);
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+
+            walkingController.StopWalk();
+        }
+    }
+```
