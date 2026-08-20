@@ -405,8 +405,8 @@ The project is under active development with the aim of releasing it to the publ
 
 ## Code examples links
 
-* [Editor graph](./project_examples/mission_in_space/code/graph.cs)
-* [Portable state](./project_examples/mission_in_space/code/node.cs)
+* [Editor graph](./project_examples/portable_state_machine/code/graph.cs)
+* [Portable state](./project_examples/portable_state_machine/code/node.cs)
 
 Node example
 ```csharp
@@ -431,3 +431,4 @@ Node example
         }
     }
 ```
+* [Portable FSM](./project_examples/portable_state_machine/code/fsm.cs)
