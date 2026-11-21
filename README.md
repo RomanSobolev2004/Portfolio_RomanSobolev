@@ -158,7 +158,7 @@ Nevertheless, the project includes 2 fully functional game levels, with some sup
  # 🎮 The tale of the Lost one
 **A 3D horror quest game**
 
-[![Unity Version](https://img.shields.io/badge/Unity-6000.0LTS-black?style=flat-square&logo=unity)](https://unity.com/)
+[![Unity Version](https://img.shields.io/badge/Unity-6000.6.6f1-black?style=flat-square&logo=unity)](https://unity.com/)
 [![Type](https://img.shields.io/badge/Personal-grey.svg?style=flat-square)]()
 [![Status](https://img.shields.io/badge/In_Progress-blue.svg?style=flat-square)]()
 
@@ -178,11 +178,11 @@ The project’s architecture was designed in accordance with the MVC and SOLID p
 
 ## 🛠 Tech Stack & Tools
 
-* **Engine:** Unity 6000.0.59f2 LTS
+* **Engine:** Unity 6000.6.6f1
 * **Language:** C#
 * **Architecture & Optimozation** MVC, SOLID, Component-Based Design
-* **Dependency Injection:** Custom injection system, using [Zenject by modesttree](https://github.com/modesttree/zenject)
-* **Other Plugins/Tools:** DOTween, NaughtyAttributes, UniRX, EasySave, Shader Graph
+* **Dependency Injection:** Custom injection system, using [VContainer](https://github.com/hadashiA/VContainer)
+* **Other Plugins/Tools:** PrimeTween, TriInspector, R3, EasySave, Shader Graph, UI-Toolkit
 
 ## 🏗 Architecture & Engineering Highlights
 
@@ -199,34 +199,20 @@ The project’s architecture was designed in accordance with the MVC and SOLID p
 
 Example
 ```csharp
-//Simple usage
-private void Example()
+public class Player: IPlayer
 {
-    WrappedParameters parameters = new();
-    parameters.WrappObjects(123, "Example", true);
-    Debug.Log(parameters.Unwrapp<int>()); //returns 123 as int
-    Debug.Log(parameters.Unwrapp<string>()); //returns "Example" as string
-
-    parameters.WrappNew(321);
-    Debug.Log(parameters.Unwrapp<int>(0)); //returns 123
-    Debug.Log(parameters.Unwrapp<int>(1)); //returns 321
-
-    parameters.WrappNew(m_player.WrappTo<IPlayer>());
-    Debug.Log(parameters.Unwrapp<IPlayer>()); //returns m_player as IPlayer interface
-}
-
-//Binding Zenject
-[Inject] IZenjectWrapped wrapped;
-public override void InstallBindings()
-{
-    wrapped.Bind(player.Interface.WrappTo<IPlayer>());
-}
-
-//Injecting
-[Inject]
-protected virtual void Construct(IZenjectWrapped zenject)
-{
-    IPlayer parameter = zenject.Unwrapp<IPlayer>();
+  //Register Object
+  [Register] public Registry void Register()
+  {
+       return new Registry(this).As<IPlayer>();
+  }
+  
+  //Injecting
+  [Inject]
+  protected virtual void Construct(IContainerResolve container)
+  {
+      IPlayer player = container.Resolve<IPlayer>();
+  }
 }
 ```
 * [Save System](./project_examples/tale_of_lost_one/code/saves.cs)
