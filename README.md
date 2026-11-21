@@ -195,7 +195,7 @@ The project’s architecture was designed in accordance with the MVC and SOLID p
 
 ## Code examples links
 
-* [Object Wrapping tool, used for custom DI](./project_examples/tale_of_lost_one/code/wrapper.cs)
+* [Custom DI](./project_examples/tale_of_lost_one/code/DI.cs)
 
 Example
 ```csharp
